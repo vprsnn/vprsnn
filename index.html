@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Applications of Spiking Neural Networks in Visual Place Recognition">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Applications of Spiking Neural Networks in Visual Place Recognition</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script> -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Applications of Spiking Neural Networks in Visual Place Recognition</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://research.qut.edu.au/qcr/people/somayeh-hussaini/">Somayeh Hussaini</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://michaelmilford.com">Michael Milford</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://www.tobiasfischer.info">Tobias Fischer</a><sup>1</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Queensland University of Technology (QUT) Centre for Robotics</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- IEEE Xplore -->
+              <!-- <span class="link-block">
+                <a href="https://arxiv.org/pdf/2311.13186v2"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>IEEE Xplore</span>
+                </a>
+              </span> -->
+              <!-- Preprint -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2311.13186v2"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>Preprint</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=6-flr8EK6nA&t=15s"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/QVPR/VPRSNN"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="./static/images/Ens_of_modularSNNs.png"
+           alt="Nerfies teaser image."
+           class="teaser-image"
+           style="display: block; margin-left: auto; margin-right: auto"/>
+      <h2 class="subtitle has-text-justified">
+        Our approach builds on independent Spiking Neural Network (SNN) modules, each trained on small subsets of the reference database. During inference, these modules' place predictions are fused in parallel within a "Standalone Modular SNN," enabling scalability across numerous locations. We leverage the parallel processing potential of neuromorphic processors by using ensembles, where multiple Modular SNNs represent the same place, showing that SNNs are highly responsive to ensembling. Lastly, we highlight the effectiveness of these Ensembles of Modular SNNs in sequence matching.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            In robotics, Spiking Neural Networks (SNNs) are increasingly recognized for their 
+            largely-unrealized potential energy efficiency and low latency particularly when 
+            implemented on neuromorphic hardware. Our paper highlights three advancements for 
+            SNNs in Visual Place Recognition (VPR).     
+          </p>
+          <p>
+            Firstly, we propose Modular SNNs, where each SNN represents a set of non-overlapping 
+            geographically distinct places, enabling scalable networks for large environments. 
+            Secondly, we present Ensembles of Modular SNNs, where multiple networks represent the 
+            same place, significantly enhancing accuracy compared to single-network models. 
+            Each of our Modular SNN modules is compact, comprising only 1500 neurons and 474k synapses, 
+            making them ideally suited for ensembling due to their small size. 
+            Lastly, we investigate the role of sequence matching in SNN-based VPR, a technique 
+            where consecutive images are used to refine place recognition. 
+          </p>
+          <p>
+            We demonstrate competitive performance of our method on a range of datasets, including higher 
+            responsiveness to ensembling compared to conventional VPR techniques and higher R@1 improvements 
+            with sequence matching than VPR techniques with comparable baseline performance.   
+            Our contributions highlight the viability of SNNs for VPR, offering scalable and robust solutions, 
+            and paving the way for their application in various energy-sensitive robotic tasks.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/6-flr8EK6nA?start=0&rel=0&showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+
+    <!-- Local paper video -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Proof-of-concept Robot Deployment</h2>
+        <div class="publication-video">
+          <video id="local-video"
+                 controls
+                 muted
+                 loop
+                 playsinline
+                 height="100%">
+            <source src="./static/videos/robot_deployment_video_new.mp4" type="video/mp4">
+          </video>
+          <!-- Caption positioned below the video -->
+          <p class="caption has-text-justified">
+            We deployed our Modular SNN on an AgileX Scout Mini robot for real-time place recognition in a 100-meter path, running on a CPU. 
+            Our system successfully achieved 75% place recognition accuracy, with processing times of 1.1 to 2 seconds per image. 
+            This highlights its potential for future neuromorphic hardware deployment for further enhanced performance.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{hussaini2023applications,
+      title={Applications of Spiking Neural Networks in Visual Place Recognition},
+      author={Hussaini, Somayeh and Milford, Michael and Fischer, Tobias},
+      journal={arXiv preprint arXiv:2311.13186},
+      year={2023} 
+}</code></pre>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="https://arxiv.org/abs/2311.13186" class="external-link" disabled>
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/vprsnn" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            We created this website based on the following <a
+              href="https://github.com/nerfies/nerfies.github.io">source code.</a> 
+            We thank the authors for sharing their work.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+.DS_store
+.idea
+._Icon
+
+static/interpolation/stacked/*
+static/videos/*
+
+*.png
+*.jpg
+*.svg
